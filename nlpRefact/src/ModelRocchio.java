@@ -123,9 +123,9 @@ public class ModelRocchio {
 			}
 			
 			
-			Iterator<Integer> it_map = map.keySet().iterator();
-			while(it_map.hasNext()) {
-				int rank = it_map.next();
+		
+			for(int j = 1;j < map.keySet().size();j++) {
+				int rank = j;
 				String line = String.format("%d\t%f\n", 
 						rank, map.get(rank));
 
@@ -976,7 +976,7 @@ public class ModelRocchio {
 			}
 			out_list.write("\n");
 
-			map_p.put(nonNegNE, new Double(1.0*valid/i));
+			map_p.put(nonNegNE, new Double(1.0*valid/nonNegNE));
 		//	map_p.put(i, new Double(1.0*valid/i));
 	
 			

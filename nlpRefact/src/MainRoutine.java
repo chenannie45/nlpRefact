@@ -21,9 +21,17 @@ public class MainRoutine {
 		ModelRocchio model = new ModelRocchio(dataset);
 		
 		String[] names = {"Beijing","Paris","London"};
+		System.out.println("Begin feature Pruned:");
 		model.setNumSeeds(3);
 		model.setSeeds(names);
 		model.init();
 		model.runRichico();
+		
+		System.out.println("Begin Original:");
+		ModelRocchioOrigin modelO = new ModelRocchioOrigin(dataset);
+		modelO.setNumSeeds(3);
+		modelO.setSeeds(names);
+		modelO.init(file_goldenset);
+		modelO.runRichico();
 	}
 }
